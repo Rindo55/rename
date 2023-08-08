@@ -16,7 +16,7 @@ async def rename_file(bot, msg):
     new_name = new_name.replace(".mkv", "")
     sts = await msg.reply_text("Trying to Download.....")
     c_time = time.time()
-    downloaded = await reply.download(file_name=new_name, progress=progress_message, progress_args=("Download Started.....", sts, c_time)) 
+    downloaded = await reply.download(file_name=f"{new_name}.mkv", progress=progress_message, progress_args=("Download Started.....", sts, c_time)) 
     filesize = humanbytes(og_media.file_size)                
     if CAPTION:
         try:
